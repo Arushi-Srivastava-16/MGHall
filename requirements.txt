@@ -1,0 +1,35 @@
+# Core ML Libraries
+torch>=2.0.0
+torch-geometric>=2.3.0
+torch-scatter>=2.1.0
+torch-sparse>=0.6.0
+torch-cluster>=1.6.0
+
+# Data Processing
+datasets>=2.14.0
+pandas>=2.0.0
+numpy>=1.24.0
+pyarrow>=12.0.0
+
+# NLP & Embeddings
+transformers>=4.30.0
+sentence-transformers>=2.2.0
+scikit-learn>=1.3.0
+
+# Experiment Tracking & Utils
+wandb>=0.15.0
+tqdm>=4.65.0
+pyyaml>=6.0
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# Testing
+pytest>=7.4.0
+pytest-cov>=4.1.0
+
+# Code Analysis (for HumanEval)
+ast-comments>=1.1.0
+
+# Optional: For LLM-based processing
+openai>=1.0.0
+
