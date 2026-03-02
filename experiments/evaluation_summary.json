@@ -1,0 +1,289 @@
+{
+  "Math": {
+    "node_classification": {
+      "accuracy": 0.9042338709677419,
+      "confusion_matrix": [
+        [
+          132,
+          88
+        ],
+        [
+          7,
+          765
+        ]
+      ],
+      "precision": 0.8968347010550997,
+      "recall": 0.9909326424870466,
+      "f1": 0.9415384615384615,
+      "support": 992,
+      "per_class": {
+        "correct": {
+          "precision": 0.8968347010550997,
+          "recall": 0.9909326424870466,
+          "f1": 0.9415384615384615,
+          "support": 772
+        },
+        "incorrect": {
+          "precision": 0.9496402877697842,
+          "recall": 0.6,
+          "f1": 0.7353760445682451,
+          "support": 220
+        }
+      }
+    },
+    "origin_detection": {
+      "accuracy": 0.9808467741935484,
+      "confusion_matrix": [
+        [
+          853,
+          8
+        ],
+        [
+          11,
+          120
+        ]
+      ],
+      "precision": 0.9375,
+      "recall": 0.916030534351145,
+      "f1": 0.9266409266409267,
+      "support": 992,
+      "per_class": {
+        "is_origin": {
+          "precision": 0.9375,
+          "recall": 0.916030534351145,
+          "f1": 0.9266409266409267,
+          "support": 131
+        },
+        "not_origin": {
+          "precision": 0.9872685185185185,
+          "recall": 0.9907084785133565,
+          "f1": 0.9889855072463768,
+          "support": 861
+        }
+      }
+    },
+    "data_statistics": {
+      "total_nodes": 992,
+      "correct_nodes": 772,
+      "incorrect_nodes": 220,
+      "origin_nodes": 131,
+      "non_origin_nodes": 861,
+      "class_balance_node": 0.7782257795333862,
+      "class_balance_origin": 0.13205644488334656
+    }
+  },
+  "Code": {
+    "node_classification": {
+      "accuracy": 0.9251396648044693,
+      "confusion_matrix": [
+        [
+          191,
+          38
+        ],
+        [
+          29,
+          637
+        ]
+      ],
+      "precision": 0.9437037037037037,
+      "recall": 0.9564564564564565,
+      "f1": 0.9500372856077554,
+      "support": 895,
+      "per_class": {
+        "correct": {
+          "precision": 0.9437037037037037,
+          "recall": 0.9564564564564565,
+          "f1": 0.9500372856077554,
+          "support": 666
+        },
+        "incorrect": {
+          "precision": 0.8681818181818182,
+          "recall": 0.834061135371179,
+          "f1": 0.8507795100222717,
+          "support": 229
+        }
+      }
+    },
+    "origin_detection": {
+      "accuracy": 0.8916201117318435,
+      "confusion_matrix": [
+        [
+          741,
+          96
+        ],
+        [
+          1,
+          57
+        ]
+      ],
+      "precision": 0.37254901960784315,
+      "recall": 0.9827586206896551,
+      "f1": 0.5402843601895735,
+      "support": 895,
+      "per_class": {
+        "is_origin": {
+          "precision": 0.37254901960784315,
+          "recall": 0.9827586206896551,
+          "f1": 0.5402843601895735,
+          "support": 58
+        },
+        "not_origin": {
+          "precision": 0.9986522911051213,
+          "recall": 0.8853046594982079,
+          "f1": 0.9385687143761875,
+          "support": 837
+        }
+      }
+    },
+    "data_statistics": {
+      "total_nodes": 895,
+      "correct_nodes": 666,
+      "incorrect_nodes": 229,
+      "origin_nodes": 58,
+      "non_origin_nodes": 837,
+      "class_balance_node": 0.7441340684890747,
+      "class_balance_origin": 0.06480447202920914
+    }
+  },
+  "Code-Improved": {
+    "node_classification": {
+      "accuracy": 0.9262569832402234,
+      "confusion_matrix": [
+        [
+          202,
+          27
+        ],
+        [
+          39,
+          627
+        ]
+      ],
+      "precision": 0.9587155963302753,
+      "recall": 0.9414414414414415,
+      "f1": 0.95,
+      "support": 895,
+      "per_class": {
+        "correct": {
+          "precision": 0.9587155963302753,
+          "recall": 0.9414414414414415,
+          "f1": 0.95,
+          "support": 666
+        },
+        "incorrect": {
+          "precision": 0.8381742738589212,
+          "recall": 0.8820960698689956,
+          "f1": 0.8595744680851064,
+          "support": 229
+        }
+      }
+    },
+    "origin_detection": {
+      "accuracy": 0.9988826815642458,
+      "confusion_matrix": [
+        [
+          836,
+          1
+        ],
+        [
+          0,
+          58
+        ]
+      ],
+      "precision": 0.9830508474576272,
+      "recall": 1.0,
+      "f1": 0.9914529914529915,
+      "support": 895,
+      "per_class": {
+        "is_origin": {
+          "precision": 0.9830508474576272,
+          "recall": 1.0,
+          "f1": 0.9914529914529915,
+          "support": 58
+        },
+        "not_origin": {
+          "precision": 1.0,
+          "recall": 0.998805256869773,
+          "f1": 0.9994022713687986,
+          "support": 837
+        }
+      }
+    },
+    "data_statistics": {
+      "total_nodes": 895,
+      "correct_nodes": 666,
+      "incorrect_nodes": 229,
+      "origin_nodes": 58,
+      "non_origin_nodes": 837,
+      "class_balance_node": 0.7441340684890747,
+      "class_balance_origin": 0.06480447202920914
+    }
+  },
+  "Medical": {
+    "node_classification": {
+      "accuracy": 1.0,
+      "confusion_matrix": [
+        [
+          189
+        ]
+      ],
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 189,
+      "per_class": {
+        "correct": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "incorrect": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 189
+        }
+      }
+    },
+    "origin_detection": {
+      "accuracy": 0.9947089947089947,
+      "confusion_matrix": [
+        [
+          39,
+          0
+        ],
+        [
+          1,
+          149
+        ]
+      ],
+      "precision": 1.0,
+      "recall": 0.9933333333333333,
+      "f1": 0.9966555183946488,
+      "support": 189,
+      "per_class": {
+        "is_origin": {
+          "precision": 1.0,
+          "recall": 0.9933333333333333,
+          "f1": 0.9966555183946488,
+          "support": 150
+        },
+        "not_origin": {
+          "precision": 0.975,
+          "recall": 1.0,
+          "f1": 0.9873417721518988,
+          "support": 39
+        }
+      }
+    },
+    "data_statistics": {
+      "total_nodes": 189,
+      "correct_nodes": 0,
+      "incorrect_nodes": 189,
+      "origin_nodes": 150,
+      "non_origin_nodes": 39,
+      "class_balance_node": 0.0,
+      "class_balance_origin": 0.7936508059501648
+    }
+  }
+}

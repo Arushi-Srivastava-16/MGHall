@@ -1,0 +1,344 @@
+{
+  "Math": {
+    "total_graphs": 150,
+    "graphs_with_errors": 136,
+    "origin_detection_rate": 0.8823529411764706,
+    "avg_propagation_distance": 3.8666666666666667,
+    "avg_contamination_ratio": 1.0,
+    "num_intervention_points": 586,
+    "per_graph_analysis": [
+      {
+        "graph_id": 0,
+        "num_nodes": 8,
+        "num_errors": 5,
+        "origin_detected": true,
+        "true_origin": 3,
+        "pred_origin": 7
+      },
+      {
+        "graph_id": 1,
+        "num_nodes": 33,
+        "num_errors": 1,
+        "origin_detected": false,
+        "true_origin": 32,
+        "pred_origin": -1
+      },
+      {
+        "graph_id": 2,
+        "num_nodes": 3,
+        "num_errors": 1,
+        "origin_detected": true,
+        "true_origin": 2,
+        "pred_origin": 2
+      },
+      {
+        "graph_id": 4,
+        "num_nodes": 4,
+        "num_errors": 1,
+        "origin_detected": true,
+        "true_origin": 3,
+        "pred_origin": 3
+      },
+      {
+        "graph_id": 5,
+        "num_nodes": 6,
+        "num_errors": 1,
+        "origin_detected": true,
+        "true_origin": 5,
+        "pred_origin": 5
+      },
+      {
+        "graph_id": 6,
+        "num_nodes": 6,
+        "num_errors": 5,
+        "origin_detected": true,
+        "true_origin": 5,
+        "pred_origin": 5
+      },
+      {
+        "graph_id": 7,
+        "num_nodes": 5,
+        "num_errors": 1,
+        "origin_detected": true,
+        "true_origin": 4,
+        "pred_origin": 4
+      },
+      {
+        "graph_id": 8,
+        "num_nodes": 5,
+        "num_errors": 2,
+        "origin_detected": true,
+        "true_origin": 4,
+        "pred_origin": 4
+      },
+      {
+        "graph_id": 9,
+        "num_nodes": 10,
+        "num_errors": 1,
+        "origin_detected": true,
+        "true_origin": 9,
+        "pred_origin": 9
+      },
+      {
+        "graph_id": 10,
+        "num_nodes": 2,
+        "num_errors": 1,
+        "origin_detected": true,
+        "true_origin": 1,
+        "pred_origin": 1
+      },
+      {
+        "graph_id": 11,
+        "num_nodes": 10,
+        "num_errors": 1,
+        "origin_detected": true,
+        "true_origin": 9,
+        "pred_origin": 9
+      },
+      {
+        "graph_id": 12,
+        "num_nodes": 16,
+        "num_errors": 4,
+        "origin_detected": true,
+        "true_origin": 15,
+        "pred_origin": 15
+      },
+      {
+        "graph_id": 13,
+        "num_nodes": 3,
+        "num_errors": 1,
+        "origin_detected": true,
+        "true_origin": 2,
+        "pred_origin": 2
+      },
+      {
+        "graph_id": 14,
+        "num_nodes": 3,
+        "num_errors": 3,
+        "origin_detected": true,
+        "true_origin": 2,
+        "pred_origin": 2
+      },
+      {
+        "graph_id": 15,
+        "num_nodes": 8,
+        "num_errors": 3,
+        "origin_detected": true,
+        "true_origin": 7,
+        "pred_origin": 7
+      },
+      {
+        "graph_id": 0,
+        "num_nodes": 6,
+        "num_errors": 1,
+        "origin_detected": false,
+        "true_origin": 5,
+        "pred_origin": -1
+      },
+      {
+        "graph_id": 1,
+        "num_nodes": 5,
+        "num_errors": 1,
+        "origin_detected": true,
+        "true_origin": 4,
+        "pred_origin": 4
+      },
+      {
+        "graph_id": 2,
+        "num_nodes": 5,
+        "num_errors": 2,
+        "origin_detected": true,
+        "true_origin": 4,
+        "pred_origin": 4
+      },
+      {
+        "graph_id": 4,
+        "num_nodes": 2,
+        "num_errors": 1,
+        "origin_detected": true,
+        "true_origin": 1,
+        "pred_origin": 1
+      },
+      {
+        "graph_id": 5,
+        "num_nodes": 5,
+        "num_errors": 1,
+        "origin_detected": true,
+        "true_origin": 4,
+        "pred_origin": 4
+      }
+    ]
+  },
+  "Math_depth_stats": {},
+  "Code": {
+    "total_graphs": 150,
+    "graphs_with_errors": 58,
+    "origin_detection_rate": 1.0,
+    "avg_propagation_distance": 2.742690058479532,
+    "avg_contamination_ratio": 1.0,
+    "num_intervention_points": 197,
+    "per_graph_analysis": [
+      {
+        "graph_id": 1,
+        "num_nodes": 7,
+        "num_errors": 4,
+        "origin_detected": true,
+        "true_origin": 3,
+        "pred_origin": 3
+      },
+      {
+        "graph_id": 3,
+        "num_nodes": 14,
+        "num_errors": 7,
+        "origin_detected": true,
+        "true_origin": 7,
+        "pred_origin": 7
+      },
+      {
+        "graph_id": 6,
+        "num_nodes": 6,
+        "num_errors": 3,
+        "origin_detected": true,
+        "true_origin": 3,
+        "pred_origin": 3
+      },
+      {
+        "graph_id": 9,
+        "num_nodes": 8,
+        "num_errors": 4,
+        "origin_detected": true,
+        "true_origin": 4,
+        "pred_origin": 4
+      },
+      {
+        "graph_id": 11,
+        "num_nodes": 11,
+        "num_errors": 6,
+        "origin_detected": true,
+        "true_origin": 5,
+        "pred_origin": 5
+      },
+      {
+        "graph_id": 14,
+        "num_nodes": 6,
+        "num_errors": 3,
+        "origin_detected": true,
+        "true_origin": 3,
+        "pred_origin": 3
+      },
+      {
+        "graph_id": 0,
+        "num_nodes": 9,
+        "num_errors": 5,
+        "origin_detected": true,
+        "true_origin": 4,
+        "pred_origin": 4
+      },
+      {
+        "graph_id": 2,
+        "num_nodes": 6,
+        "num_errors": 3,
+        "origin_detected": true,
+        "true_origin": 3,
+        "pred_origin": 3
+      },
+      {
+        "graph_id": 4,
+        "num_nodes": 6,
+        "num_errors": 3,
+        "origin_detected": true,
+        "true_origin": 3,
+        "pred_origin": 3
+      },
+      {
+        "graph_id": 6,
+        "num_nodes": 6,
+        "num_errors": 3,
+        "origin_detected": true,
+        "true_origin": 3,
+        "pred_origin": 3
+      },
+      {
+        "graph_id": 8,
+        "num_nodes": 3,
+        "num_errors": 2,
+        "origin_detected": true,
+        "true_origin": 1,
+        "pred_origin": 1
+      },
+      {
+        "graph_id": 10,
+        "num_nodes": 4,
+        "num_errors": 2,
+        "origin_detected": true,
+        "true_origin": 2,
+        "pred_origin": 2
+      },
+      {
+        "graph_id": 15,
+        "num_nodes": 5,
+        "num_errors": 3,
+        "origin_detected": true,
+        "true_origin": 2,
+        "pred_origin": 2
+      },
+      {
+        "graph_id": 1,
+        "num_nodes": 13,
+        "num_errors": 7,
+        "origin_detected": true,
+        "true_origin": 6,
+        "pred_origin": 6
+      },
+      {
+        "graph_id": 3,
+        "num_nodes": 14,
+        "num_errors": 7,
+        "origin_detected": true,
+        "true_origin": 7,
+        "pred_origin": 7
+      },
+      {
+        "graph_id": 5,
+        "num_nodes": 3,
+        "num_errors": 2,
+        "origin_detected": true,
+        "true_origin": 1,
+        "pred_origin": 1
+      },
+      {
+        "graph_id": 9,
+        "num_nodes": 3,
+        "num_errors": 2,
+        "origin_detected": true,
+        "true_origin": 1,
+        "pred_origin": 1
+      },
+      {
+        "graph_id": 11,
+        "num_nodes": 12,
+        "num_errors": 6,
+        "origin_detected": true,
+        "true_origin": 6,
+        "pred_origin": 6
+      },
+      {
+        "graph_id": 13,
+        "num_nodes": 3,
+        "num_errors": 2,
+        "origin_detected": true,
+        "true_origin": 1,
+        "pred_origin": 1
+      },
+      {
+        "graph_id": 3,
+        "num_nodes": 6,
+        "num_errors": 3,
+        "origin_detected": true,
+        "true_origin": 3,
+        "pred_origin": 3
+      }
+    ]
+  },
+  "Code_depth_stats": {}
+}

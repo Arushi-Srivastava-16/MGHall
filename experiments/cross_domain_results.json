@@ -1,0 +1,46 @@
+{
+  "Math": {
+    "Math": {
+      "node_accuracy": 0.9042338709677419,
+      "node_precision": 0.8968347010550997,
+      "node_recall": 0.9909326424870466,
+      "node_f1": 0.9415384615384615,
+      "origin_accuracy": 0.9808467741935484,
+      "origin_precision": 0.9375,
+      "origin_recall": 0.916030534351145,
+      "origin_f1": 0.9266409266409267
+    },
+    "Code": {
+      "node_accuracy": 0.7061452513966481,
+      "node_precision": 0.7690253671562083,
+      "node_recall": 0.8648648648648649,
+      "node_f1": 0.8141342756183746,
+      "origin_accuracy": 0.7832402234636872,
+      "origin_precision": 0.0,
+      "origin_recall": 0.0,
+      "origin_f1": 0.0
+    }
+  },
+  "Code": {
+    "Math": {
+      "node_accuracy": 0.7137096774193549,
+      "node_precision": 0.8218997361477572,
+      "node_recall": 0.8069948186528497,
+      "node_f1": 0.8143790849673203,
+      "origin_accuracy": 0.8497983870967742,
+      "origin_precision": 0.09090909090909091,
+      "origin_recall": 0.015267175572519083,
+      "origin_f1": 0.026143790849673203
+    },
+    "Code": {
+      "node_accuracy": 0.9262569832402234,
+      "node_precision": 0.9587155963302753,
+      "node_recall": 0.9414414414414415,
+      "node_f1": 0.95,
+      "origin_accuracy": 1.0,
+      "origin_precision": 1.0,
+      "origin_recall": 1.0,
+      "origin_f1": 1.0
+    }
+  }
+}

@@ -347,3 +347,4 @@ class MultiTaskTrainer:
         self.history = checkpoint['history']
         self.best_val_loss = checkpoint['best_val_loss']
 
+

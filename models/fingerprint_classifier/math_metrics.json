@@ -1,0 +1,48 @@
+{
+  "accuracy": 0.584717607973422,
+  "precision": {
+    "claude-v1": 0.5368421052631579,
+    "gemini-pro": 0.0,
+    "gpt-4": 0.6105263157894737,
+    "llama-2-70b-chat": 0.6036036036036037
+  },
+  "recall": {
+    "claude-v1": 0.51,
+    "gemini-pro": 0.0,
+    "gpt-4": 0.58,
+    "llama-2-70b-chat": 0.67
+  },
+  "f1_score": {
+    "claude-v1": 0.5230769230769231,
+    "gemini-pro": 0.0,
+    "gpt-4": 0.5948717948717949,
+    "llama-2-70b-chat": 0.6350710900473934
+  },
+  "confusion_matrix": [
+    [
+      51,
+      0,
+      24,
+      25
+    ],
+    [
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      23,
+      0,
+      58,
+      19
+    ],
+    [
+      20,
+      0,
+      13,
+      67
+    ]
+  ],
+  "classification_report": "                  precision    recall  f1-score   support\n\n       claude-v1       0.54      0.51      0.52       100\n      gemini-pro       0.00      0.00      0.00         1\n           gpt-4       0.61      0.58      0.59       100\nllama-2-70b-chat       0.60      0.67      0.64       100\n\n        accuracy                           0.58       301\n       macro avg       0.44      0.44      0.44       301\n    weighted avg       0.58      0.58      0.58       301\n"
+}

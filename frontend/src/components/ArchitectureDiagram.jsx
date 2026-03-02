@@ -1,0 +1,263 @@
+import React, { useState, useEffect } from 'react';
+import { Shield, Activity, Brain, Database, AlertTriangle, CheckCircle, X, Play } from 'lucide-react';
+import './ArchitectureDiagram.css';
+
+const ArchitectureDiagram = () => {
+    const [activeNode, setActiveNode] = useState(null);
+    const [expandedNode, setExpandedNode] = useState(null);
+    const [particles, setParticles] = useState([]);
+    const [isAnimating, setIsAnimating] = useState(false);
+    const [demoMode, setDemoMode] = useState(false);
+
+    const nodes = {
+        query: { id: 'query', label: 'User Query', x: 100, y: 150, color: '#64748b', icon: 'message', description: 'Initial user prompt or question enters the LLMShield system for processing' },
+        safety: { id: 'safety', label: 'SafetyGAT', x: 250, y: 150, color: '#10b981', icon: 'shield', description: 'Graph-based safety filter detecting harmful intent and bypass attempts using attention mechanisms', metrics: { requests: 1247, blocked: 89, passRate: 93, avgTime: '23ms' } },
+        vulnerability: { id: 'vulnerability', label: 'VulnerabilityGAT', x: 400, y: 150, color: '#f59e0b', icon: 'activity', description: 'Proactive risk prediction (90.42% accuracy) identifying potential hallucinations before they occur', metrics: { requests: 1247, detected: 156, accuracy: 90.4, avgTime: '45ms' } },
+        llm: { id: 'llm', label: 'Gemini LLM', x: 550, y: 150, color: '#3b82f6', icon: 'brain', description: 'Primary language model (Gemini 2.0 Flash) generating reasoning chains and responses', metrics: { queries: 1158, tokens: '2.4M', avgTime: '890ms' } },
+        rag: { id: 'rag', label: 'RAG Retrieval', x: 400, y: 300, color: '#8b5cf6', icon: 'database', description: 'Knowledge-base retrieval and context injection to correct high-risk responses using Argilla dataset', metrics: { interventions: 156, success: 98, avgTime: '120ms' } },
+        response: { id: 'response', label: 'Safe Response', x: 700, y: 150, color: '#10b981', icon: 'check', description: 'Verified, hallucination-free output delivered to user' },
+        blocked: { id: 'blocked', label: 'Blocked', x: 250, y: 300, color: '#ef4444', icon: 'alert', description: 'Unsafe content prevented from reaching user by SafetyGAT' }
+    };
+
+    const normalFlow = [
+        { from: 'query', to: 'safety', color: '#3b82f6' },
+        { from: 'safety', to: 'vulnerability', color: '#10b981' },
+        { from: 'vulnerability', to: 'llm', color: '#f59e0b' },
+        { from: 'llm', to: 'response', color: '#3b82f6' }
+    ];
+
+    const ragFlow = [
+        { from: 'query', to: 'safety', color: '#3b82f6' },
+        { from: 'safety', to: 'vulnerability', color: '#10b981' },
+        { from: 'vulnerability', to: 'rag', color: '#f59e0b' },
+        { from: 'rag', to: 'response', color: '#8b5cf6' }
+    ];
+
+    const paths = [
+        { from: 'query', to: 'safety', color: '#3b82f6' },
+        { from: 'safety', to: 'vulnerability', color: '#10b981', label: 'Safe' },
+        { from: 'vulnerability', to: 'llm', color: '#f59e0b', label: 'Low Risk' },
+        { from: 'llm', to: 'response', color: '#3b82f6' },
+        { from: 'safety', to: 'blocked', color: '#ef4444', label: 'Unsafe', dashed: true },
+        { from: 'vulnerability', to: 'rag', color: '#f59e0b', label: 'High Risk', dashed: true },
+        { from: 'rag', to: 'response', color: '#8b5cf6' }
+    ];
+
+    // Demo mode
+    useEffect(() => {
+        if (!demoMode) return;
+
+        const demoSequence = async () => {
+            const flow = Math.random() > 0.5 ? normalFlow : ragFlow;
+
+            for (let i = 0; i < flow.length; i++) {
+                const path = flow[i];
+                const from = nodes[path.from];
+                const to = nodes[path.to];
+
+                setActiveNode(path.from);
+
+                const newParticle = {
+                    id: Date.now() + i,
+                    x1: from.x,
+                    y1: from.y,
+                    x2: to.x,
+                    y2: to.y,
+                    color: path.color,
+                    progress: 0
+                };
+
+                setParticles(prev => [...prev, newParticle]);
+                await new Promise(resolve => setTimeout(resolve, 1500));
+            }
+
+            setActiveNode(null);
+            setDemoMode(false);
+        };
+
+        demoSequence();
+    }, [demoMode]);
+
+    // Continuous animation
+    useEffect(() => {
+        if (!isAnimating || demoMode) return;
+
+        let pathIndex = 0;
+        const interval = setInterval(() => {
+            const path = normalFlow[pathIndex % normalFlow.length];
+            const from = nodes[path.from];
+            const to = nodes[path.to];
+
+            const newParticle = {
+                id: Date.now(),
+                x1: from.x,
+                y1: from.y,
+                x2: to.x,
+                y2: to.y,
+                color: path.color,
+                progress: 0
+            };
+
+            setParticles(prev => [...prev.slice(-10), newParticle]);
+            pathIndex++;
+        }, 800);
+
+        return () => clearInterval(interval);
+    }, [isAnimating, demoMode]);
+
+    // Animate particles
+    useEffect(() => {
+        const animationFrame = setInterval(() => {
+            setParticles(prev =>
+                prev.map(p => ({ ...p, progress: p.progress + 0.02 }))
+                    .filter(p => p.progress <= 1)
+            );
+        }, 30);
+
+        return () => clearInterval(animationFrame);
+    }, []);
+
+    const IconComponent = ({ type, size = 24, color }) => {
+        const icons = { shield: Shield, activity: Activity, brain: Brain, database: Database, alert: AlertTriangle, check: CheckCircle };
+        const Icon = icons[type];
+        return Icon ? <Icon size={size} color={color} /> : <span style={{ fontSize: size }}>💬</span>;
+    };
+
+    const NodeComponent = ({ node }) => {
+        const isActive = activeNode === node.id;
+
+        return (
+            <g onMouseEnter={() => setActiveNode(node.id)} onMouseLeave={() => setActiveNode(null)} onClick={() => setExpandedNode(expandedNode === node.id ? null : node.id)} style={{ cursor: 'pointer' }}>
+                {isActive && <circle cx={node.x} cy={node.y} r={45} fill={node.color} opacity={0.2} className="node-glow" />}
+                <circle cx={node.x} cy={node.y} r={isActive ? 38 : 35} fill="white" stroke={node.color} strokeWidth={isActive ? 3 : 2} className="node-circle" />
+                <foreignObject x={node.x - 18} y={node.y - 18} width={36} height={36}>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%' }}>
+                        <IconComponent type={node.icon} size={24} color={node.color} />
+                    </div>
+                </foreignObject>
+                <text x={node.x} y={node.y + 55} textAnchor="middle" fontSize="12" fontWeight="600" fill="#334155">{node.label}</text>
+                {isActive && (
+                    <circle cx={node.x} cy={node.y} r={35} fill="none" stroke={node.color} strokeWidth={2} opacity={0}>
+                        <animate attributeName="r" from="35" to="50" dur="1.5s" repeatCount="indefinite" />
+                        <animate attributeName="opacity" from="0.8" to="0" dur="1.5s" repeatCount="indefinite" />
+                    </circle>
+                )}
+            </g>
+        );
+    };
+
+    const Arrow = ({ from, to, color, label, dashed }) => {
+        const fromNode = nodes[from];
+        const toNode = nodes[to];
+        const midX = (fromNode.x + toNode.x) / 2;
+        const midY = (fromNode.y + toNode.y) / 2;
+
+        return (
+            <g>
+                <defs>
+                    <marker id={`arrow-${from}-${to}`} markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                        <polygon points="0 0, 10 3, 0 6" fill={color} />
+                    </marker>
+                </defs>
+                <line x1={fromNode.x} y1={fromNode.y} x2={toNode.x} y2={toNode.y} stroke={color} strokeWidth="2" strokeDasharray={dashed ? "5,5" : "0"} markerEnd={`url(#arrow-${from}-${to})`} className="flow-arrow" />
+                {label && <text x={midX} y={midY - 5} textAnchor="middle" fontSize="10" fill="#64748b" fontWeight="500">{label}</text>}
+            </g>
+        );
+    };
+
+    return (
+        <div className="architecture-diagram-container">
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
+                <h3 className="diagram-title">System Architecture</h3>
+                <div style={{ display: 'flex', gap: '0.5rem' }}>
+                    <button onClick={() => setDemoMode(true)} disabled={demoMode || isAnimating} style={{ background: demoMode ? '#94a3b8' : '#8b5cf6', color: 'white', border: 'none', padding: '0.5rem 1rem', borderRadius: '6px', cursor: demoMode || isAnimating ? 'not-allowed' : 'pointer', fontSize: '0.875rem', fontWeight: '600', display: 'flex', alignItems: 'center', gap: '0.5rem', opacity: demoMode || isAnimating ? 0.6 : 1 }}>
+                        <Play size={16} /> {demoMode ? 'Processing...' : 'Demo Query'}
+                    </button>
+                    <button onClick={() => setIsAnimating(!isAnimating)} disabled={demoMode} style={{ background: isAnimating ? '#ef4444' : '#3b82f6', color: 'white', border: 'none', padding: '0.5rem 1rem', borderRadius: '6px', cursor: demoMode ? 'not-allowed' : 'pointer', fontSize: '0.875rem', fontWeight: '600', opacity: demoMode ? 0.6 : 1 }}>
+                        {isAnimating ? '⏸ Pause Flow' : '▶ Animate Flow'}
+                    </button>
+                </div>
+            </div>
+
+            <svg width="100%" height="400" viewBox="0 0 800 400">
+                {paths.map((path, i) => <Arrow key={i} {...path} />)}
+                {particles.map(p => {
+                    const x = p.x1 + (p.x2 - p.x1) * p.progress;
+                    const y = p.y1 + (p.y2 - p.y1) * p.progress;
+                    return <circle key={p.id} cx={x} cy={y} r={4} fill={p.color} opacity={1 - p.progress} />;
+                })}
+                {Object.values(nodes).map(node => <NodeComponent key={node.id} node={node} />)}
+            </svg>
+
+            {activeNode && !expandedNode && (
+                <div className="metrics-tooltip">
+                    <div className="tooltip-header" style={{ borderLeftColor: nodes[activeNode].color }}>{nodes[activeNode].label}</div>
+                    <div className="tooltip-content">{nodes[activeNode].description}</div>
+                    {nodes[activeNode].metrics && (
+                        <>
+                            <div style={{ borderTop: '1px solid var(--slate-200)', margin: '0 1rem' }}></div>
+                            <div className="metrics-grid">
+                                {Object.entries(nodes[activeNode].metrics).map(([key, value]) => (
+                                    <div key={key} className="metric-item">
+                                        <span className="metric-label">{key.replace(/([A-Z])/g, ' $1').trim()}</span>
+                                        <span className="metric-value">{value}</span>
+                                    </div>
+                                ))}
+                            </div>
+                        </>
+                    )}
+                </div>
+            )}
+
+            {expandedNode && (
+                <div className="expanded-node-modal">
+                    <div className="modal-header" style={{ borderLeftColor: nodes[expandedNode].color }}>
+                        <h4>{nodes[expandedNode].label} - Internal Architecture</h4>
+                        <button onClick={() => setExpandedNode(null)} style={{ background: 'none', border: 'none', cursor: 'pointer' }}><X size={20} /></button>
+                    </div>
+                    <div className="modal-content">
+                        {expandedNode === 'vulnerability' && (
+                            <div className="architecture-stack">
+                                <div className="arch-layer">Input Layer <span className="dim-badge">395 dim</span></div>
+                                <div className="arch-arrow">↓</div>
+                                <div className="arch-layer">GAT Layer 1 (Multi-Head) <span className="dim-badge">64 dim, 2 heads</span></div>
+                                <div className="arch-arrow">↓</div>
+                                <div className="arch-layer highlighted">Confidence Gating Mechanism</div>
+                                <div className="arch-arrow">↓</div>
+                                <div className="arch-layer">GAT Layer 2 <span className="dim-badge">64 dim</span></div>
+                                <div className="arch-arrow">↓</div>
+                                <div className="arch-layer output">Output: Risk Score <span className="score-badge">0-100%</span></div>
+                                <div className="current-status">Current Risk: <span className="risk-indicator yellow">67% ⚠️</span></div>
+                            </div>
+                        )}
+                        {expandedNode === 'safety' && (
+                            <div className="architecture-stack">
+                                <div className="arch-layer">Graph Structure Analysis</div>
+                                <div className="arch-arrow">↓</div>
+                                <div className="arch-layer">Pattern Detection (Confidence-Gated)</div>
+                                <div className="arch-arrow">↓</div>
+                                <div className="arch-layer">Safety Classification</div>
+                                <div className="arch-arrow">↓</div>
+                                <div className="arch-layer output">Output: Safe / Unsafe</div>
+                                <div className="current-status">Status: <span className="risk-indicator green">Safe ✓</span></div>
+                            </div>
+                        )}
+                        {expandedNode === 'rag' && (
+                            <div className="architecture-stack">
+                                <div className="arch-layer">Query Analysis</div>
+                                <div className="arch-arrow">↓</div>
+                                <div className="arch-layer">Vector DB Retrieval (Argilla)</div>
+                                <div className="arch-arrow">↓</div>
+                                <div className="arch-layer highlighted">Context Injection</div>
+                                <div className="arch-arrow">↓</div>
+                                <div className="arch-layer output">Corrected Response</div>
+                            </div>
+                        )}
+                    </div>
+                </div>
+            )}
+        </div>
+    );
+};
+
+export default ArchitectureDiagram;

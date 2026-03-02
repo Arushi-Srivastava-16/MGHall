@@ -1,0 +1,225 @@
+.architecture-diagram-container {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    border: 1px solid var(--slate-200);
+    margin: 2rem 0;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.diagram-title {
+    color: var(--slate-900);
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.node-circle {
+    transition: all 0.2s ease;
+}
+
+.node-circle:hover {
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+.node-glow {
+    animation: glow 1.5s ease-in-out infinite;
+}
+
+@keyframes glow {
+
+    0%,
+    100% {
+        opacity: 0.2;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
+}
+
+.flow-arrow {
+    transition: stroke-width 0.2s ease;
+}
+
+/* Metrics Tooltip */
+.metrics-tooltip {
+    background: white;
+    border: 1px solid var(--slate-200);
+    border-radius: 12px;
+    padding: 0;
+    margin-top: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    animation: fadeInUp 0.2s ease;
+}
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.metric-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.metric-label {
+    font-size: 0.75rem;
+    color: var(--slate-600);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.25rem;
+}
+
+.metric-value {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--slate-900);
+}
+
+/* Expanded Node Modal */
+.expanded-node-modal {
+    background: white;
+    border: 1px solid var(--slate-200);
+    border-radius: 16px;
+    padding: 0;
+    margin-top: 2rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 0.3s ease;
+}
+
+.modal-header {
+    padding: 1.5rem;
+    border-left: 4px solid;
+    background: var(--slate-50);
+    border-radius: 16px 16px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h4 {
+    margin: 0;
+    color: var(--slate-900);
+    font-size: 1.125rem;
+}
+
+.modal-content {
+    padding: 2rem;
+}
+
+/* Architecture Stack */
+.architecture-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.arch-layer {
+    padding: 1rem 1.5rem;
+    background: white;
+    border: 2px solid var(--slate-200);
+    border-radius: 8px;
+    font-weight: 600;
+    color: var(--slate-700);
+    transition: all 0.2s;
+}
+
+.arch-layer:hover {
+    border-color: var(--blue-400);
+    transform: translateX(4px);
+}
+
+.arch-layer.highlighted {
+    background: linear-gradient(135deg, #f59e0b10, #8b5cf610);
+    border-color: var(--blue-500);
+    color: var(--slate-900);
+}
+
+.arch-layer.output {
+    background: var(--slate-50);
+    border-color: var(--blue-600);
+    border-width: 3px;
+}
+
+.arch-arrow {
+    text-align: center;
+    font-size: 1.5rem;
+    color: var(--slate-400);
+    line-height: 1;
+}
+
+.dim-badge,
+.score-badge {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    background: var(--slate-100);
+    border-radius: 4px;
+    font-size: 0.75rem;
+    color: var(--slate-600);
+    margin-left: 0.5rem;
+}
+
+.score-badge {
+    background: var(--blue-100);
+    color: var(--blue-700);
+}
+
+.current-status {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: var(--slate-50);
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--slate-700);
+}
+
+.risk-indicator {
+    font-size: 1.25rem;
+    font-weight: 700;
+    padding: 0.25rem 0.75rem;
+    border-radius: 6px;
+}
+
+.risk-indicator.green {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.risk-indicator.yellow {
+    background: #fef3c7;
+    color: #b45309;
+}
+
+/* Tooltip header */
+.tooltip-header {
+    padding: 1rem 1.25rem;
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: var(--slate-900);
+    border-left: 4px solid;
+    background: var(--slate-50);
+    border-radius: 12px 12px 0 0;
+}
+
+.tooltip-content {
+    padding: 1rem 1.25rem;
+    color: var(--slate-700);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

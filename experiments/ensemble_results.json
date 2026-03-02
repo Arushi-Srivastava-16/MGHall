@@ -1,0 +1,44 @@
+{
+  "Weighted Average": {
+    "Math": {
+      "node_accuracy": 0.8850806451612904,
+      "node_f1": 0.9298029556650246,
+      "origin_accuracy": 0.9526209677419355,
+      "origin_f1": 0.7853881278538812
+    },
+    "Code": {
+      "node_accuracy": 0.9173184357541899,
+      "node_f1": 0.9443609022556391,
+      "origin_accuracy": 0.9966480446927374,
+      "origin_f1": 0.9747899159663865
+    }
+  },
+  "Max Confidence": {
+    "Math": {
+      "node_accuracy": 0.8921370967741935,
+      "node_f1": 0.9334990677439403,
+      "origin_accuracy": 0.9707661290322581,
+      "origin_f1": 0.8816326530612245
+    },
+    "Code": {
+      "node_accuracy": 0.924022346368715,
+      "node_f1": 0.9490254872563718,
+      "origin_accuracy": 0.9843575418994414,
+      "origin_f1": 0.8923076923076924
+    }
+  },
+  "Simple Average": {
+    "Math": {
+      "node_accuracy": 0.8830645161290323,
+      "node_f1": 0.9279503105590062,
+      "origin_accuracy": 0.9233870967741935,
+      "origin_f1": 0.5957446808510638
+    },
+    "Code": {
+      "node_accuracy": 0.9016759776536313,
+      "node_f1": 0.9336349924585219,
+      "origin_accuracy": 1.0,
+      "origin_f1": 1.0
+    }
+  }
+}

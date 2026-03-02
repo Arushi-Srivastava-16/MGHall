@@ -1,0 +1,73 @@
+{
+  "config": {
+    "domain": "math",
+    "checkpoint": "/Users/arushisrivastava/Documents/GitHub/MGHall/models/checkpoints/test_run/best_model.pth",
+    "test_data": "/Users/arushisrivastava/Documents/GitHub/MGHall/data/processed/splits/test.jsonl",
+    "max_test_chains": 50,
+    "warn_threshold": 0.3,
+    "correct_threshold": 0.7
+  },
+  "metrics": {
+    "total_chains": 50,
+    "chains_with_errors": 45,
+    "vulnerability_detected": 45,
+    "interventions_triggered": 382,
+    "early_detections": 37,
+    "time_to_detection": [
+      3,
+      32,
+      2,
+      3,
+      5,
+      1,
+      4,
+      9,
+      1,
+      9,
+      12,
+      2,
+      5,
+      5,
+      4,
+      1,
+      1,
+      4,
+      2,
+      7,
+      4,
+      1,
+      1,
+      6,
+      17,
+      18,
+      5,
+      4,
+      4,
+      5,
+      1,
+      6,
+      2,
+      1,
+      22,
+      5,
+      4
+    ],
+    "false_positives": 5,
+    "false_negatives": 0,
+    "detection_rate": 1.0,
+    "early_detection_rate": 0.8222222222222222,
+    "avg_time_to_detection": 5.891891891891892,
+    "false_positive_rate": 1.0
+  },
+  "controller_stats": {
+    "total_interventions": 382,
+    "warnings": 46,
+    "corrections": 336,
+    "risk_level_counts": {
+      "LOW": 0,
+      "MEDIUM": 46,
+      "HIGH": 336
+    },
+    "unique_chains": 50
+  }
+}

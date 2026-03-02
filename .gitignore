@@ -1,4 +1,4 @@
-# Python
+# ── Python ───────────────────────────────────────────────────
 __pycache__/
 *.py[cod]
 *$py.class
@@ -12,7 +12,6 @@ eggs/
 .eggs/
 lib/
 lib64/
-parts/
 sdist/
 var/
 wheels/
@@ -20,51 +19,54 @@ wheels/
 .installed.cfg
 *.egg
 
-# Virtual Environment
+# ── Virtual Environment ──────────────────────────────────────
 venv/
 env/
 ENV/
 .venv
 
-# IDE
+# ── IDE ──────────────────────────────────────────────────────
 .vscode/
 .idea/
 *.swp
 *.swo
 *~
 
-# Jupyter Notebooks
+# ── Jupyter ──────────────────────────────────────────────────
 .ipynb_checkpoints/
 *.ipynb
 
-# Data
-data/processed/
-data/graphs/
+# ── Data (too large for GitHub) ──────────────────────────────
+data/
 *.jsonl
 *.arrow
 *.parquet
 
-# Models & Checkpoints
+# ── Models & Checkpoints (use HuggingFace / Releases) ────────
 models/checkpoints/
 models/domain_models/
 *.pth
 *.pt
 *.ckpt
 
-# Experiments
+# ── Experiment Artifacts ─────────────────────────────────────
 experiments/results/
 wandb/
 mlruns/
 
-# Logs
+# ── Logs ─────────────────────────────────────────────────────
 *.log
 logs/
+backend_*.log
 
-# OS
+# ── OS ───────────────────────────────────────────────────────
 .DS_Store
 Thumbs.db
 
-# Environment variables
+# ── Environment Variables (never commit secrets) ──────────────
 .env
 .env.local
+
+# ── Archive (internal / working notes, not for public) ───────
+_archive/
 

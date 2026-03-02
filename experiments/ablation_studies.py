@@ -113,9 +113,9 @@ def main():
     results_dir = Path(__file__).parent / "results" / "ablations"
     results_dir.mkdir(parents=True, exist_ok=True)
     
-    train_path = data_dir / "train.jsonl"
-    val_path = data_dir / "val.jsonl"
-    test_path = data_dir / "test.jsonl"
+    train_path = data_dir / "train_small.jsonl"
+    val_path = data_dir / "val_small.jsonl"
+    test_path = data_dir / "test_small.jsonl"
     
     if not train_path.exists():
         print("Error: Data not found. Please run conversion and splitting first.")
@@ -131,7 +131,7 @@ def main():
         "learning_rate": 1e-3,
         "weight_decay": 1e-5,
         "batch_size": 16,
-        "max_epochs": 50,
+        "max_epochs": 1,
         "patience": 10,
     }
     
@@ -286,4 +286,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 

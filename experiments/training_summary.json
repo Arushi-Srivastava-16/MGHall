@@ -1,0 +1,24 @@
+{
+  "timestamp": "2025-12-07T22:32:48.217543",
+  "total_duration_seconds": 57.891227,
+  "results": [
+    {
+      "domain": "Math",
+      "success": true,
+      "duration_seconds": 21.211426,
+      "error": null
+    },
+    {
+      "domain": "Code",
+      "success": true,
+      "duration_seconds": 13.889748,
+      "error": null
+    },
+    {
+      "domain": "Medical",
+      "success": true,
+      "duration_seconds": 16.772457,
+      "error": null
+    }
+  ]
+}

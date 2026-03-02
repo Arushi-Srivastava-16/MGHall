@@ -1,0 +1,177 @@
+.chains-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.chains-list {
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.chains-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.chains-table th,
+.chains-table td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  color: #2c3e50;
+}
+
+.chains-table th {
+  background-color: #f5f5f5;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.chains-table td {
+  color: #34495e;
+}
+
+.page-controls {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.feature-item {
+  padding: 0.5rem;
+  background: #f9f9f9;
+  border-radius: 4px;
+  color: #2c3e50;
+}
+
+.feature-item strong {
+  color: #2c3e50;
+}
+
+.models-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.model-card {
+  padding: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: #2c3e50;
+  background-color: white;
+}
+
+.model-card h3 {
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.model-card p {
+  color: #7f8c8d;
+  margin: 0.25rem 0;
+}
+
+.model-card:hover {
+  border-color: #3498db;
+  background-color: #f8f9fa;
+}
+
+.model-card.selected {
+  border-color: #3498db;
+  background-color: #e3f2fd;
+}
+
+.predictions-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.predictions-table th,
+.predictions-table td {
+  padding: 0.75rem;
+  text-align: center;
+  border: 1px solid #ddd;
+  color: #2c3e50;
+}
+
+.predictions-table th {
+  background-color: #f5f5f5;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.patterns-table {
+  overflow-x: auto;
+}
+
+.patterns-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.patterns-table th,
+.patterns-table td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  color: #2c3e50;
+}
+
+.patterns-table th {
+  background-color: #f5f5f5;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.experiments-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.experiment-item {
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+  background-color: white;
+  color: #2c3e50;
+}
+
+.experiment-item h3 {
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.experiment-item p {
+  color: #7f8c8d;
+  margin: 0.25rem 0;
+}
+
+.experiment-item:hover {
+  border-color: #3498db;
+  background-color: #f9f9f9;
+}
+
+.page {
+  padding: 2rem 0;
+}
+
+.page h1 {
+  margin-bottom: 2rem;
+  color: #2c3e50;
+}
+

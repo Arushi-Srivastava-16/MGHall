@@ -101,6 +101,7 @@ class ConfidenceGatedGAT(nn.Module):
         edge_index: torch.Tensor,
         confidence: Optional[torch.Tensor] = None,
         batch: Optional[torch.Tensor] = None,
+        return_attention_weights: bool = False,
     ) -> dict:
         """
         Forward pass.
@@ -110,6 +111,7 @@ class ConfidenceGatedGAT(nn.Module):
             edge_index: Edge connectivity (2, E)
             confidence: Optional confidence scores (N,)
             batch: Optional batch vector for graph-level tasks
+            return_attention_weights: Whether to return attention weights
             
         Returns:
             Dictionary with predictions for each task
@@ -119,15 +121,22 @@ class ConfidenceGatedGAT(nn.Module):
         x = F.relu(x)
         x = F.dropout(x, p=self.dropout, training=self.training)
         
+        attention_weights_list = []
+        
         # GAT layers with confidence gating
         for i, gat_layer in enumerate(self.gat_layers):
             # Forward through GAT
-            x_new = gat_layer(x, edge_index)
+            # Standard GATConv returns (x, (edge_index, alpha)) if return_attention_weights=True
+            if return_attention_weights:
+                x_new, (edge_idx, alpha) = gat_layer(x, edge_index, return_attention_weights=True)
+                attention_weights_list.append((edge_idx, alpha))
+            else:
+                x_new = gat_layer(x, edge_index)
             
             # Apply confidence gating if enabled
             if self.use_confidence_gating and confidence is not None:
-                # Compute confidence weights
-                conf_weights = torch.sigmoid(self.confidence_proj(x))
+                # Compute confidence weights based on the new representation
+                conf_weights = torch.sigmoid(self.confidence_proj(x_new))
                 conf_weights = conf_weights.squeeze(-1)
                 
                 # Normalize confidence
@@ -160,6 +169,9 @@ class ConfidenceGatedGAT(nn.Module):
             "error_type_pred": error_type_pred,  # (N, 4)
             "node_embeddings": x,  # (N, hidden_dim * num_heads)
         }
+        
+        if return_attention_weights:
+            outputs["attention_weights"] = attention_weights_list
         
         return outputs
 
@@ -217,6 +229,7 @@ class SimpleGCN(nn.Module):
         return {
             "node_pred": torch.sigmoid(self.node_classifier(x)).squeeze(-1),
             "origin_pred": torch.sigmoid(self.origin_classifier(x)).squeeze(-1),
+            "error_type_pred": torch.zeros(x.size(0), 4).to(x.device),  # Placeholder
             "node_embeddings": x,
         }
 

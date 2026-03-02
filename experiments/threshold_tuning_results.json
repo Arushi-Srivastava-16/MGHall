@@ -1,0 +1,174 @@
+{
+  "search_space": {
+    "warn_thresholds": [
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7
+    ],
+    "correct_thresholds": [
+      0.6,
+      0.7,
+      0.8,
+      0.9
+    ]
+  },
+  "all_results": [
+    {
+      "warn_threshold": 0.3,
+      "correct_threshold": 0.6,
+      "detection_rate": 1.0,
+      "false_positive_rate": 1.0,
+      "early_detection_rate": 0.8043478260869565,
+      "avg_time_to_detection": 5.22972972972973,
+      "interventions": 740
+    },
+    {
+      "warn_threshold": 0.3,
+      "correct_threshold": 0.7,
+      "detection_rate": 1.0,
+      "false_positive_rate": 1.0,
+      "early_detection_rate": 0.8043478260869565,
+      "avg_time_to_detection": 5.22972972972973,
+      "interventions": 740
+    },
+    {
+      "warn_threshold": 0.3,
+      "correct_threshold": 0.8,
+      "detection_rate": 1.0,
+      "false_positive_rate": 1.0,
+      "early_detection_rate": 0.8043478260869565,
+      "avg_time_to_detection": 5.22972972972973,
+      "interventions": 740
+    },
+    {
+      "warn_threshold": 0.3,
+      "correct_threshold": 0.9,
+      "detection_rate": 1.0,
+      "false_positive_rate": 1.0,
+      "early_detection_rate": 0.8043478260869565,
+      "avg_time_to_detection": 5.22972972972973,
+      "interventions": 740
+    },
+    {
+      "warn_threshold": 0.4,
+      "correct_threshold": 0.6,
+      "detection_rate": 1.0,
+      "false_positive_rate": 1.0,
+      "early_detection_rate": 0.8043478260869565,
+      "avg_time_to_detection": 5.22972972972973,
+      "interventions": 692
+    },
+    {
+      "warn_threshold": 0.4,
+      "correct_threshold": 0.7,
+      "detection_rate": 1.0,
+      "false_positive_rate": 1.0,
+      "early_detection_rate": 0.8043478260869565,
+      "avg_time_to_detection": 5.22972972972973,
+      "interventions": 692
+    },
+    {
+      "warn_threshold": 0.4,
+      "correct_threshold": 0.8,
+      "detection_rate": 1.0,
+      "false_positive_rate": 1.0,
+      "early_detection_rate": 0.8043478260869565,
+      "avg_time_to_detection": 5.22972972972973,
+      "interventions": 692
+    },
+    {
+      "warn_threshold": 0.4,
+      "correct_threshold": 0.9,
+      "detection_rate": 1.0,
+      "false_positive_rate": 1.0,
+      "early_detection_rate": 0.8043478260869565,
+      "avg_time_to_detection": 5.22972972972973,
+      "interventions": 692
+    },
+    {
+      "warn_threshold": 0.5,
+      "correct_threshold": 0.6,
+      "detection_rate": 1.0,
+      "false_positive_rate": 1.0,
+      "early_detection_rate": 0.8043478260869565,
+      "avg_time_to_detection": 5.22972972972973,
+      "interventions": 672
+    },
+    {
+      "warn_threshold": 0.5,
+      "correct_threshold": 0.7,
+      "detection_rate": 1.0,
+      "false_positive_rate": 1.0,
+      "early_detection_rate": 0.8043478260869565,
+      "avg_time_to_detection": 5.22972972972973,
+      "interventions": 672
+    },
+    {
+      "warn_threshold": 0.5,
+      "correct_threshold": 0.8,
+      "detection_rate": 1.0,
+      "false_positive_rate": 1.0,
+      "early_detection_rate": 0.8043478260869565,
+      "avg_time_to_detection": 5.22972972972973,
+      "interventions": 672
+    },
+    {
+      "warn_threshold": 0.5,
+      "correct_threshold": 0.9,
+      "detection_rate": 1.0,
+      "false_positive_rate": 1.0,
+      "early_detection_rate": 0.8043478260869565,
+      "avg_time_to_detection": 5.22972972972973,
+      "interventions": 672
+    },
+    {
+      "warn_threshold": 0.6,
+      "correct_threshold": 0.7,
+      "detection_rate": 1.0,
+      "false_positive_rate": 1.0,
+      "early_detection_rate": 0.8043478260869565,
+      "avg_time_to_detection": 5.22972972972973,
+      "interventions": 656
+    },
+    {
+      "warn_threshold": 0.6,
+      "correct_threshold": 0.8,
+      "detection_rate": 1.0,
+      "false_positive_rate": 1.0,
+      "early_detection_rate": 0.8043478260869565,
+      "avg_time_to_detection": 5.22972972972973,
+      "interventions": 656
+    },
+    {
+      "warn_threshold": 0.6,
+      "correct_threshold": 0.9,
+      "detection_rate": 1.0,
+      "false_positive_rate": 1.0,
+      "early_detection_rate": 0.8043478260869565,
+      "avg_time_to_detection": 5.22972972972973,
+      "interventions": 656
+    },
+    {
+      "warn_threshold": 0.7,
+      "correct_threshold": 0.8,
+      "detection_rate": 1.0,
+      "false_positive_rate": 1.0,
+      "early_detection_rate": 0.8043478260869565,
+      "avg_time_to_detection": 5.22972972972973,
+      "interventions": 643
+    },
+    {
+      "warn_threshold": 0.7,
+      "correct_threshold": 0.9,
+      "detection_rate": 1.0,
+      "false_positive_rate": 1.0,
+      "early_detection_rate": 0.8043478260869565,
+      "avg_time_to_detection": 5.22972972972973,
+      "interventions": 643
+    }
+  ],
+  "valid_configs": [],
+  "best_config": null
+}
