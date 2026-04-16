@@ -18,6 +18,19 @@
 
 ---
 
+## 📈 Results at a Glance
+
+| Domain | Task | Accuracy | Precision | Recall | **F1 Score** |
+|--------|------|:--------:|:---------:|:------:|:------------:|
+| Math | Hallucination Detection | 90.32% | 93.51% | 94.59% | **94.08%** |
+| Math | Origin Attribution | 98.39% | 91.18% | 96.88% | **94.03%** |
+| Code | Hallucination Detection | 92.63% | 95.87% | 94.14% | **95.00%** |
+| Code | Origin Attribution | 99.89% | 98.31% | 100.00% | **99.15%** |
+
+> Models: `ConfidenceGatedGAT` · 3-layer · 4 attention heads · ~250K parameters · ~10ms inference latency
+
+---
+
 ## 🧠 What is CHG?
 
 Most LLM safety tools are reactive — they check the *output* after generation. **CHG is proactive**: it monitors the LLM's *reasoning process step by step* and intervenes before a hallucination propagates.
